@@ -1,0 +1,337 @@
+<!--Added Menu button.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width:device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Tarik Avdic - Resume</title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            html{
+                scroll-behavior: smooth;
+            }
+            body{
+                position: absolute;
+                font-family: 'Times New Roman', Times, serif;
+                background-color: rgb(169,169,169);
+                color: rgb(255,255,255);
+            }
+            .navbar{
+                width: 100%;
+                position: fixed;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: rgb(255,228,196);
+                color:rgb(0,0,0);
+            }
+            .navbar .name{
+                order: 1;
+                font-size: 2rem;
+                margin: 0.5rem;
+                text-transform: uppercase;
+                
+            }
+            .navbar .navbarlinks{
+                order: 2;
+                margin: 0.5rem;
+            }
+            .navbar ul{
+                display: flex;
+            }
+            .navbar li{
+                padding: 1rem;
+                list-style: none;
+                text-transform: uppercase;
+            }
+            .navbar li a{
+                color: rgb(77, 163, 203);
+            }
+            .navbar li a:hover{
+                color: rgb(11, 2, 53);
+                opacity: 0.8;
+                font-size: 1.2rem;
+                background-color: darkgray;
+
+            }
+            .navbar .name a{
+                color: rgb(77, 163, 203);
+            }
+
+            .navbar .name a:hover{
+                color: rgb(11, 2, 53);
+                opacity: 0.8;
+                font-size: 2.2rem;
+                background-color: darkgray;
+            }
+            .box{
+                padding: 5rem;
+                display: flex;
+            }
+            .leftbox{
+                width: 50%;
+                justify-content: center;
+                padding: 2rem;
+            }
+            .rightbox{
+                width: 50%;
+                justify-content: center;
+                padding: 2rem;
+            }
+
+            .menu-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 1.3rem;
+            height: 1rem;
+             }
+
+            .menu-btn .bar {
+            height: 0.2rem;
+            width: 100%;
+            background-color: rgb(77, 163, 203);
+            border-radius: 0.5rem;
+             }
+            
+            @media (max-width:800px){
+                .box{
+                    flex-direction: column;
+                    padding-top: 3rem;
+                }
+                .leftbox{
+                    width: 100%;
+                }
+                .rightbox{
+                    width: 100%;
+                }
+                .navbar{
+                    flex-direction: column;
+                }
+                .navbarlinks{
+                    display: none;
+                    width: 100%;
+                }
+                .navbarlinks ul{
+                    flex-direction: column;
+                    width: 100%;
+                }
+                
+                .navbarlinks ul li {
+                    text-align: center;
+                }
+                .navbarlinks ul li a {
+                padding: .5rem 1rem;
+                 }
+                .navbarlinks.active {
+                display: flex;
+                }
+                .menu-btn {
+                display: flex;
+                }
+            }
+           
+            img{
+                width: 100%;
+                height: auto;
+                border: 1rem black;
+                border-radius: 10%;
+            }
+             #firstrightbox{
+                 display: flex;
+                 flex-direction: column;
+                 align-items: flex-start;
+                 justify-content:center;
+                
+            }
+            #secondrightbox, #thirdrightbox, #fourthrightbox, #fifthrightbox{
+                display: flex;
+                 flex-direction: column;
+                 align-items: flex-start;
+                 justify-content: space-between;
+            }
+           #experience, #education, #skills{
+               background-color: rgb(128,128,128);  
+           }
+         
+           #firstelement{
+               font-size: 5rem;
+               color: rgb(255,228,196);
+           }
+           #secondelement{
+               font-size: 2rem;
+               font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+               color: rgb(0,0,0);
+               
+           }
+           #thirdelement{
+               font-size: 1.5rem;
+           }
+           #secondleftbox, #thirdleftbox, #fourthleftbox, #fifthleftbox{
+               color: rgb(255,228,196);
+               font-size: 5rem;
+           }
+           #secondrightbox .listingname, #thirdrightbox .listingname, #fifthrightbox .listingname, #fourthrightbox{
+               font-size: 2rem;
+               color: rgb(0,0,0);
+           }
+           dd{
+               font-size: 1.5rem;
+           }
+           .descriptionclass{
+               font-size: 1.2rem;
+           }
+           #fourthrightbox li{
+               list-style:none;
+               font-size: 2rem;
+
+           }
+           .fa{
+             
+              font-size: 3rem;
+              text-align: center;
+              width: 3.5rem;
+              height: 3.5rem;
+              border-radius:1rem ;
+           }
+           .fa-linkedin{
+                background: rgb(77, 163, 203);
+                color: rgb(255,255,255);
+           }
+           .fa-facebook{
+                background: rgb(59, 89, 152);
+                color: rgb(255,255,255);
+           }
+           .fa:hover{
+               opacity: 0.8;
+           }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="name">
+                <a href="#tarikavdic">Tarik Avdic</a>
+            </div>
+            <a href="#" class="menu-btn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbarlinks">
+                <ul>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="box" id="tarikavdic">
+            <div class="leftbox" id="firstleftbox">
+                <img src="https://scontent.fsjj1-1.fna.fbcdn.net/v/t1.6435-9/99425291_3426778397353045_2889159207926366208_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=174925&_nc_ohc=x5cGN4p4ri8AX9x4IrC&_nc_ht=scontent.fsjj1-1.fna&oh=00_AT8eHg_NVXLIZnfPN0G-li9XV8kW2ScuLFPVStbop0qtxA&oe=6240AE25" alt="Portrait of Tarik Avdic">
+            </div>
+            <div class="rightbox" id="firstrightbox">
+                    <div id="firstelement">Tarik Avdic</div>
+                    <div id="secondelement">Bachelor of electrical engineering</div><br>
+                    <span><a href="https:/https://www.linkedin.com/in/tarikavdic/" class="fa fa-linkedin"></a>
+                    <a href="https://www.facebook.com/tarik.avdic.7/" class="fa fa-facebook"></a></span><br>
+                    <div id="thirdelement">
+                        <p>23 years old electrical engineer from Bosnia and Herzegovina.<br> Currently, on a postgraduate studies in the field of Energy Conversion Systems.<br>
+                        I am a highly reliable, adventurous person, with high drive for learning and exploring new challenges.<br>
+                        Communicative, open, adaptive and willing to work hard.
+                        </p>
+                     </div> 
+            </div>
+        </div>
+
+        <div class="box" id="experience">
+            <div class="leftbox" id="secondleftbox">
+                Experience
+            </div>
+            <div class="rightbox" id="secondrightbox">
+                <dl>
+                    <dt class="listingname">GIKIL d.o.o. Lukavac</dt>
+                        <dd>Maintenance engineer, December 2020 - present </dd>
+                        <dd class="descriptionclass">Control of technical - technological documentation of
+                            Automotive Control Systems and measuring
+                            instruments</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="box" id="education">
+            <div class="leftbox" id="thirdleftbox">
+                Education
+            </div>
+            <div class="rightbox" id="thirdrightbox">
+        
+                    <dt class="listingname">Faculty of Electrical Engineering Tuzla</dt>
+                    <dd>Masters degree, November 2020 - present </dd>
+                    <dd class="descriptionclass">Energy Conversion Systems</dd>
+                    <br>
+                    <dt class="listingname">Faculty of Electrical Engineering Tuzla</dt>
+                    <dd>Bachelors degree, October 2016 - October 2020 </dd>
+                    <dd class="descriptionclass"> Electrical Engineering and Energy Conversion Systems</dd>
+                    <br>
+                    <dt class="listingname">EESTEC LC Tuzla</dt>
+                    <dd>Soft Skills Academy Tuzla, March 2021 </dd>
+                    <dd class="descriptionclass"> Presentation skills, life design and communication </dd>
+
+            </div>
+        </div>
+
+        <div class="box" id="skills">
+            <div class="leftbox" id="fourthleftbox">
+                Skills
+            </div>
+            <div class="rightbox" id="fourthrightbox">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li> Microsoft Office</li>
+                    <li> Java</li>
+                    <li>Adobe Premiere Pro</li>
+                    <li>MATLAB and Simulink</li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="box" id="contact">
+            <div class="leftbox" id="fifthleftbox">
+                Contact Information
+            </div>
+            <div class="rightbox" id="fifthrightbox">
+                <dt class="listingname">Adress:</dt>
+                    <dd class="descriptionclass">Muje Hodzica bb, 75300 Lukavac</dd>
+                    <br>
+                    <dt class="listingname">Telephone:</dt>
+                    <dd class="descriptionclass"> +387 62 796 279</dd>
+                    <br>
+                    <dt class="listingname">E-mail:</dt>
+                    <dd class="descriptionclass"> tavdic177@gmail.com </dd>
+            </div>
+        </div>
+        <script>
+            const toggleButton = document.getElementsByClassName('menu-btn')[0]
+            const navbarLinks = document.getElementsByClassName('navbarlinks')[0]
+            
+            toggleButton.addEventListener('click', () => {
+                navbarLinks.classList.toggle('active')
+            })
+            
+        </script>
+
+    </body>
+</html>
